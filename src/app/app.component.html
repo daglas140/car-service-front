@@ -1,0 +1,5 @@
+<p-progressSpinner *ngIf="spinner" class="spinner"></p-progressSpinner>
+<div [ngClass]="{'overlay': spinner}">
+  <app-menu-panel></app-menu-panel>
+  <router-outlet></router-outlet>
+</div>
