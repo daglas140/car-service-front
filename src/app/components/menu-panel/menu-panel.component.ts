@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
-import {NavigateUrls} from "../../model/constants/NavigateUrls";
+import {NavigateUrls} from "@model/NavigateUrls";
 
 @Component({
   selector: 'app-menu-panel',
