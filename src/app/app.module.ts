@@ -31,6 +31,11 @@ import { GarageComponent } from './components/garage/garage.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { CarsComponent } from './components/cars/cars.component';
 import {MatTableModule} from "@angular/material/table";
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -67,11 +72,16 @@ FullCalendarModule.registerPlugins([
     DialogModule,
     CalendarModule,
     CheckboxModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     UserService,
-    RouterLink
+    RouterLink,
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+}
+
+
+
 .card {
     background-color: var(--surface-e);
     padding: 1.5rem;
@@ -40,6 +47,25 @@ body {
   left: 45%
 }
 
+.center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.center-horizontally {
+  display: flex;
+  justify-content: center;
+}
+
+.center-vertically {
+  display: flex;
+  align-items: center;
+
+}
+
+
+html, body { 
+  height: 100%; font-size: 62.5% // 10px = 1rem 
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 2rem}

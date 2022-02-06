@@ -1,3 +1,137 @@
-#lblUserName, #lblPassword {
-  width: 5rem;
+@import '../../css-styles/global-settings-styles.scss';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.right {
+    height: 100%;
+    width: 100%;
+    background-color: $color-white;
+    color: $color-black;
+}
+
+.form-content {
+    height: 600px;
+    width: 450px;
+    background-color: $color-light-blue;
+    box-shadow: $color-gray 10px 10px 15px;
+    &.admin-mode {
+        height: 300px;
+    }
+}
+
+.change-component-type {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+}
+
+#login,
+#register {
+    height: 4rem;
+    width: 100%;
+    background-color: color-light-blue;
+    color: $color-black;
+}
+
+.login:hover:not(.active),
+.register:hover:not(.active) {
+    cursor: pointer;
+    color: $color-black;
+}
+
+.middle-section {
+    height: 250px;
+    margin-top: 200px;
+    position: relative;
+    z-index: 999;
+    flex-direction: column;
+}
+
+.top-section {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.bottom-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.form-content {
+    position: relative;
+}
+
+::ng-deep mat-form-field {
+    width: 300px !important;
+    height: 14px !important;
+    font-size: 12px !important;
+    margin-bottom: 5rem;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    color: $color-white !important;
+}
+
+::ng-deep.mat-form-field-underline,
+::ng-deep.mat-form-field-ripple {
+    background-color: $color-white !important;
+}
+
+button {
+    width: 300px;
+    margin-bottom: 2rem;
+}
+
+@mixin changeLoginRegistrationApperance($height, $time, $font-color) {
+    transition: $time height ease-in-out;
+    animation-direction: alternate;
+    transition: all $time;
+    -webkit-transition: all $time;
+    border-radius: none;
+    &.login {
+        height: $height;
+        color: $font-color;
+    }
+    &.register {
+        height: $height;
+        color: $font-color;
+    }
+}
+
+#login.active,
+#register.active {
+    &.login {
+        @include changeLoginRegistrationApperance(45rem, 1s, $color-white);
+        align-items: normal;
+    }
+    &.register {
+        color: $color-white;
+        @include changeLoginRegistrationApperance(25rem, 1s, $color-white);
+    }
+}
+
+#login,
+#register {
+    &.login:not(.active) {
+        @include changeLoginRegistrationApperance(4rem, 1s, $color-black);
+        background-color: $color-white;
+        border-radius: 50% / 100% 100% 0 0;
+    }
+    &.register:not(.active) {
+        @include changeLoginRegistrationApperance(4rem, 1s, $color-black);
+        background-color: $color-white;
+        border-radius: 50% / 0 0 100% 100%;
+    }
 }
