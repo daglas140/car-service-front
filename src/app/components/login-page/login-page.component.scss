@@ -69,28 +69,8 @@
     position: relative;
 }
 
-::ng-deep mat-form-field {
-    width: 300px !important;
-    height: 14px !important;
-    font-size: 12px !important;
-    margin-bottom: 5rem;
-}
-
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: transparent !important;
-}
-
-::ng-deep .mat-focused .mat-form-field-label {
-    color: $color-white !important;
-}
-
-::ng-deep.mat-form-field-underline,
-::ng-deep.mat-form-field-ripple {
-    background-color: $color-white !important;
-}
-
 button {
-    width: 300px;
+    width: $control-standard-width;
     margin-bottom: 2rem;
 }
 
