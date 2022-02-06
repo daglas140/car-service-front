@@ -9,6 +9,7 @@
       "@services/*": ["app/services/*"],
       "@styles/*": ["../../css-styles/*"]
     },
+    "strictPropertyInitialization": false,
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

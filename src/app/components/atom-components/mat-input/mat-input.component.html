@@ -1,0 +1,15 @@
+<mat-form-field [appearance]="appearance">
+    <mat-label>{{label}}</mat-label>
+    <input matInput [(ngModel)]="_ngModel" [required]="required"
+        [type]="inputType === 'password' ? hidePassword ? 'password' : 'text' : inputType" [placeholder]="placeholder"
+        (ngModelChange)="checkControlErrors(inputType, _ngModel)">
+    <mat-icon *ngIf="inputType === 'password'" matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ?
+        'visibility_off' :
+        'visibility'}}</mat-icon>
+    <mat-error *ngIf="!_ngModel && required">Pole jest wymagane</mat-error>
+    <mat-error *ngIf="_ngModel && inputType === 'email' && wrongEmailAdress">Błędny email</mat-error>
+    <mat-error *ngIf="_ngModel && inputType === 'password' && wrongPassword">Błędne hasło lub login</mat-error>
+</mat-form-field>
+<app-password-forcer *ngIf="inputType === 'password' && _ngModel && isPasswordForcerVisible" inputType="password"
+    [value]="_ngModel">
+</app-password-forcer>

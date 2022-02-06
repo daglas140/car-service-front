@@ -1,71 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '../node_modules/font-awesome/scss/font-awesome.scss';
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-
-
 
 .card {
     background-color: var(--surface-e);
     padding: 1.5rem;
-    -webkit-box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
-    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    -webkit-box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+        0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+        0 1px 3px 0 rgb(0 0 0 / 12%);
     border-radius: 4px;
     margin: 2rem;
 }
 
 body {
-  color: white;
-  margin: 0;
-  background-color: lightgray;
+    color: white;
+    margin: 0;
+    background-color: lightgray;
 }
 
 .field label {
-  color: white;
-  margin-right: 1rem;
+    color: white;
+    margin-right: 1rem;
 }
 
 .overlay {
-  height:100vh;
-  width:100%;
-  background-color:rgba(0, 0, 0, 0.286);
-  z-index:    10;
-  top:        0;
-  left:       0;
-  position:   fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.286);
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
 }
 
 // OVERRIDER PRIME
 .p-menubar {
-  padding: 0;
+    padding: 0;
 }
 
 .spinner {
-  z-index: 100;
-  top: 45%;
-  left: 45%
+    z-index: 100;
+    top: 45%;
+    left: 45%;
 }
 
 .center-all {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .center-horizontally {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .center-vertically {
-  display: flex;
-  align-items: center;
-
+    display: flex;
+    align-items: center;
 }
 
-
-html, body { 
-  height: 100%; font-size: 62.5% // 10px = 1rem 
+html,
+body {
+    height: 100%;
+    font-size: 62.5%; // 10px = 1rem
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 2rem}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+}

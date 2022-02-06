@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { StatusConstants } from '@model/StatusConstants';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-login-page',
@@ -20,6 +21,9 @@ export class LoginPageComponent {
     value = '';
     pass = '';
     userName = '';
+    loginName = '';
+
+    @ViewChild('myForm') myForm: NgForm;
     constructor(private userService: UserService) {}
 
     login() {
@@ -31,5 +35,6 @@ export class LoginPageComponent {
             ? StatusConstants.LOGIN_COMP_STATUS_REGISTRY_BUTTON_STATE
             : '';
         this.switchBetweenRegistrationLogin = state;
+        console.log('@@@@@@@@', this.myForm.form.controls);
     }
 }

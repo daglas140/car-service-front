@@ -1,4 +1,4 @@
-<div class="container">
+<form #myForm="ngForm" class="container">
   <div class="login-page left"></div>
   <div class="login-page right center-all">
     <div class="form-content"
@@ -12,24 +12,19 @@
 
         <div class="middle-section center-all">
           <div *ngIf="loginComponentStatus === StatusConstants.LOGIN_COMP_STATUS_ADD_USER">{{'Dodaj użytkownika'}}</div>
-          <mat-form-field appearance="fill">
-            <mat-label class="has-error">Lgoin</mat-label>
-            <input matInput required>
-          </mat-form-field>
-          <mat-form-field appearance="fill"
+          <app-mat-input id="loginInput" appearance="fill" [required]="true" [type]="'text'" label="Login"
+            [(ngModel)]="loginName" [ngModelOptions]="{standalone: true}">
+          </app-mat-input>
+          <app-mat-input id="emailInput" appearance="fill" [required]="true" type="email" label="Email"
+            placeholder="pat@example.com"
             *ngIf="loginComponentStatus === StatusConstants.LOGIN_COMP_STATUS_REGISTRY_BUTTON_STATE">
-            <mat-label>E-mail</mat-label>
-            <input type="email" matInput placeholder="Ex. pat@example.com" required>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Hasło</mat-label>
-            <input matInput placeholder="Password" type="password" required>
-          </mat-form-field>
-          <mat-form-field appearance="fill"
-            *ngIf="loginComponentStatus === StatusConstants.LOGIN_COMP_STATUS_REGISTRY_BUTTON_STATE">
-            <mat-label>Powtórz hasło</mat-label>
-            <input matInput placeholder="Password" type="password" required>
-          </mat-form-field>
+          </app-mat-input>
+          <app-mat-input id="passwordInput" appearance="fill" [required]="true" type="password" label="Hasło"
+            [isPasswordForcerVisible]="true">
+          </app-mat-input>
+          <app-mat-input id="repeatPasswordInput" appearance="fill" [required]="true" type="password"
+            label="Powtórz hasło" [isPasswordForcerVisible]="false"
+            *ngIf="loginComponentStatus === StatusConstants.LOGIN_COMP_STATUS_REGISTRY_BUTTON_STATE"></app-mat-input>
           <button mat-raised-button color="primary">{{!switchBetweenRegistrationLogin ? 'Zaloguj' :
             'Zarejestruj'}}</button>
           <button mat-raised-button color="primary" *ngIf="!switchBetweenRegistrationLogin">Odzyskaj hasło</button>
@@ -44,4 +39,4 @@
 
     </div>
   </div>
-</div>
+</form>
