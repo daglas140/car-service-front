@@ -1,0 +1,13 @@
+<div class="card" *ngIf="state$ | async as data">
+  <table mat-table [dataSource]="data.dataProvider" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of columnsDef">
+      <ng-container [matColumnDef]="column.dataKey" >
+        <th mat-header-cell *matHeaderCellDef>{{column.name}}</th>
+        <td mat-cell *matCellDef="let element"> {{element[column.dataKey]}} </td>
+      </ng-container>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

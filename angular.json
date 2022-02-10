@@ -37,10 +37,7 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "./src/styles.scss",
-              "./src/assets/styles/overrides.scss",
-              "./node_modules/primeicons/primeicons.css",
-              "./node_modules/primeng/resources/themes/saga-orange/theme.css",
-              "./node_modules/primeng/resources/primeng.min.css"
+              "./src/assets/styles/overrides.scss"
             ],
             "scripts": []
           },

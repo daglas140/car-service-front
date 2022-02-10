@@ -1,34 +1,3 @@
-<div class="card">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="poz">
-      <th mat-header-cell *matHeaderCellDef> Piorytet </th>
-      <td mat-cell *matCellDef="let element"> {{element.poz}} </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="marka">
-      <th mat-header-cell *matHeaderCellDef> Marka </th>
-      <td mat-cell *matCellDef="let element"> {{element.marka}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="model">
-      <th mat-header-cell *matHeaderCellDef> Model </th>
-      <td mat-cell *matCellDef="let element"> {{element.model}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="state">
-      <th mat-header-cell *matHeaderCellDef> Stan </th>
-      <td mat-cell *matCellDef="let element"> {{element.state}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="plannedEndDate">
-      <th mat-header-cell *matHeaderCellDef> Planowana data zakończenia </th>
-      <td mat-cell *matCellDef="let element"> {{element.plannedEndDate}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>
+<app-mat-table [dataProvider]="dataSource$"
+               [columnsDef]="columnsDef"
+               [displayedColumns]="displayedColumns"></app-mat-table>
