@@ -1,4 +1,4 @@
-<mat-form-field [appearance]="appearance">
+<mat-form-field class="custom-mat-input" [appearance]="appearance">
     <mat-label>{{label}}</mat-label>
     <input matInput [(ngModel)]="_ngModel" [required]="required"
         [type]="inputType === 'password' ? hidePassword ? 'password' : 'text' : inputType" [placeholder]="placeholder"

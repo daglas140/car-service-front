@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../node_modules/font-awesome/scss/font-awesome.scss';
+@import './app/css-styles/global-settings-styles.scss';
 * {
     box-sizing: border-box;
 }
@@ -61,6 +61,29 @@ body {
 .center-vertically {
     display: flex;
     align-items: center;
+}
+
+.mat-icon {
+    &.warn-icon {
+        &.error {
+            color: $color-red;
+        }
+        &.warning {
+            color: $color-yellow;
+        }
+    }
+    &.info-icon {
+        color: $color-light-blue;
+        &.green {
+            color: $color-green;
+        }
+        &.yellow {
+            color: $color-yellow;
+        }
+        &.red {
+            color: $color-red;
+        }
+    }
 }
 
 html,

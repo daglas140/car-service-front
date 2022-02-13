@@ -7,7 +7,8 @@
       "@model/*": ["app/model/"],
       "@components/*": ["app/components/*"],
       "@services/*": ["app/services/*"],
-      "@styles/*": ["../../css-styles/*"]
+      "@styles/*": ["../../css-styles/*"],
+      "assets": ["assets/svg"]
     },
     "strictPropertyInitialization": false,
     "outDir": "./dist/out-tsc",

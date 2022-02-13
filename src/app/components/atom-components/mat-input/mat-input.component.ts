@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { RegexpConstants } from 'app/model';
@@ -14,6 +14,7 @@ import { RegexpConstants } from 'app/model';
             multi: true,
         },
     ],
+    encapsulation: ViewEncapsulation.None,
 })
 export class MatInputComponent implements ControlValueAccessor {
     _ngModel: any;
