@@ -24,9 +24,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { MatInputComponentModule } from '@components/atom-components/mat-input/mat-input.module';
+import { LoginPageModule } from '@components/login-page/login-page.component.module';
 import { MatTableComponentModule } from '@components/atom-components/mat-table/mat-table.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { PasswordCompareDirective } from '@directives/password-compare-directive/password-compare.directive';
+import { MatIconModule } from '@angular/material/icon';
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
+import { UpdateControlDirective } from './directives/update-value-directive/update-control.directive';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -44,6 +48,8 @@ FullCalendarModule.registerPlugins([
         GarageComponent,
         ClientsComponent,
         CarsComponent,
+        PasswordCompareDirective,
+        UpdateControlDirective,
     ],
     imports: [
         BrowserModule,
@@ -56,9 +62,11 @@ FullCalendarModule.registerPlugins([
         MatButtonModule,
         MatFormFieldModule,
         MatInputModule,
-        MatInputComponentModule,
+        LoginPageModule,
         MatTableComponentModule,
         MatTooltipModule,
+        MatIconModule,
+        MatPasswordStrengthModule,
     ],
     exports: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
