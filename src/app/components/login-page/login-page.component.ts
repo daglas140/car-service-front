@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { StatusConstants } from '@model/StatusConstants';
 import { NgForm, NgModel } from '@angular/forms';
 import { UserLoginModel } from '@model/UserLoginModel';
+import { AuthGuardService } from '@services/guard-service/auth-guard.service';
 
 @Component({
     selector: 'app-login-page',
@@ -23,7 +24,10 @@ export class LoginPageComponent {
     @ViewChild('repeatedPassword') repeatedPassword: NgModel;
     @ViewChild('myForm')
     myForm: NgForm;
-    constructor(private userService: UserService) {}
+    constructor(
+        private userService: UserService,
+        private authGuardService: AuthGuardService
+    ) {}
 
     changeDisplayState_changeHandler(): void {
         this.switchBetweenRegistrationLogin =
@@ -33,12 +37,16 @@ export class LoginPageComponent {
     onSubmit(login: boolean) {
         if (login) {
             this.login();
+            return;
         }
         this.register();
     }
 
     login() {
-        this.userService.login(this.userModel.login, this.userModel.password);
+        this.authGuardService.login(
+            this.userModel.login,
+            this.userModel.password
+        );
     }
 
     register() {}

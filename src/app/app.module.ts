@@ -31,6 +31,7 @@ import { PasswordCompareDirective } from '@directives/password-compare-directive
 import { MatIconModule } from '@angular/material/icon';
 import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import { UpdateControlDirective } from './directives/update-value-directive/update-control.directive';
+import { JwtInterceptor } from './helpers/jwt-interceptor';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -50,6 +51,7 @@ FullCalendarModule.registerPlugins([
         CarsComponent,
         PasswordCompareDirective,
         UpdateControlDirective,
+        JwtInterceptor,
     ],
     imports: [
         BrowserModule,
