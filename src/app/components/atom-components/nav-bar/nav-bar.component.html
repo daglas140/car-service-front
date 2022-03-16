@@ -1,0 +1,12 @@
+<div class="nav-bar">
+    <div class="center-all center-text">
+        <h2 class="logo-text-line-height logo-top-space">.Car service</h2>
+    </div>
+    <div class="center-all icon-container-size" *ngFor="let icon of icons">
+        <a [routerLink]="icon.path" routerLinkActive="active" #rla="routerLinkActive">
+            <mat-icon [matTooltip]="icon.tooltip!" [id]="icon.id"
+                [ngClass]="{'color': rla.isActive ? 'warn' : 'primary'}" class="nav-icon-size nav-bar-icon"
+                *ngIf="icon.visibility">{{icon.name}}</mat-icon>
+        </a>
+    </div>
+</div>

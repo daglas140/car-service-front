@@ -1,81 +1,84 @@
 <div class="container center-all">
-  <div class="custom-login-form">
-    <div class="vertical-content">
-      <div id="topSection" class="center-all bordr-radius-top">{{!switchBetweenRegistrationLogin ? 'LOGOWANIE':
-        'REJESTRACJA'}}</div>
-      <div id="midSection">
-        <div *ngIf=" loginComponentStatus===StatusConstants.LOGIN_COMP_STATUS_ADD_USER">{{'Dodaj użytkownika'}}</div>
-        <div class="fields-content">
-          <div class="field">
-            <mat-form-field appearance="fill">
-              <mat-label>Login</mat-label>
-              <input matInput [(ngModel)]="userModel.login" required type="text" placeholder="Login">
-              <mat-error *ngIf="!userModel.login">Pole jest wymagane</mat-error>
-            </mat-form-field>
-          </div>
+    <div class="custom-login-form">
+        <div class="vertical-content">
+            <div id="topSection" class="center-all bordr-radius-top">{{!switchBetweenRegistrationLogin ? 'LOGOWANIE':
+                'REJESTRACJA'}}</div>
+            <div id="midSection">
+                <div *ngIf=" loginComponentStatus===StatusConstants.LOGIN_COMP_STATUS_ADD_USER">{{'Dodaj użytkownika'}}
+                </div>
+                <div class="fields-content">
+                    <div class="field">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Login</mat-label>
+                            <input matInput [(ngModel)]="userModel.login" required type="text" placeholder="Login">
+                            <mat-error *ngIf="!userModel.login">Pole jest wymagane</mat-error>
+                        </mat-form-field>
+                    </div>
 
-          <div class="field" *ngIf="switchBetweenRegistrationLogin">
-            <mat-form-field appearance="fill">
-              <mat-label>Email</mat-label>
-              <input matInput [(ngModel)]="userModel.email" required type="email" placeholder="przyklad@gmail.com"
-                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
-              <mat-error *ngIf="!userModel.email">Pole jest wymagane</mat-error>
-              <mat-error *ngIf="userModel.email">Błędny email</mat-error>
-            </mat-form-field>
-          </div>
+                    <div class="field" *ngIf="switchBetweenRegistrationLogin">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input matInput [(ngModel)]="userModel.email" required type="email"
+                                placeholder="przyklad@gmail.com"
+                                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+                            <mat-error *ngIf="!userModel.email">Pole jest wymagane</mat-error>
+                            <mat-error *ngIf="userModel.email">Błędny email</mat-error>
+                        </mat-form-field>
+                    </div>
 
-          <div class="field">
-            <mat-form-field appearance="fill">
-              <mat-label>Hasło</mat-label>
-              <input #passowrd="ngModel" matInput [(ngModel)]="userModel.password" required
-                [type]="hidePassword ? 'password' : 'text'" placeholder="Podaj hasło"
-                [appPasswordCompare]="userModel.repeatedPassword" [appUpdateControl]="repeatedPassword">
-              <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ?
-                'visibility_off' :
-                'visibility'}}</mat-icon>
-              <mat-error *ngIf="!userModel.password">Pole jest wymagane</mat-error>
-              <mat-error *ngIf="passowrd && passowrd.errors && passowrd.errors.compare">
-                Hasła nie są takie same</mat-error>
-            </mat-form-field>
-            <mat-password-strength id="passwordStrength" #passwordComponent *ngIf="userModel.password"
-              [password]="userModel.password">
-            </mat-password-strength>
-
-
-          </div>
+                    <div class="field">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Hasło</mat-label>
+                            <input #passowrd="ngModel" matInput [(ngModel)]="userModel.password" required
+                                [type]="hidePassword ? 'password' : 'text'" placeholder="Podaj hasło"
+                                [appPasswordCompare]="userModel.repeatedPassword" [appUpdateControl]="repeatedPassword">
+                            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ?
+                                'visibility_off' :
+                                'visibility'}}</mat-icon>
+                            <mat-error *ngIf="!userModel.password">Pole jest wymagane</mat-error>
+                            <mat-error *ngIf="passowrd && passowrd.errors && passowrd.errors.compare">
+                                Hasła nie są takie same</mat-error>
+                        </mat-form-field>
+                        <mat-password-strength id="passwordStrength" #passwordComponent *ngIf="userModel.password"
+                            [password]="userModel.password">
+                        </mat-password-strength>
 
 
-          <div class="field" *ngIf="switchBetweenRegistrationLogin">
-            <mat-form-field appearance="fill">
-              <mat-label>Powtórz hasło</mat-label>
-              <input #repeatedPassword="ngModel" matInput [(ngModel)]="userModel.repeatedPassword" required
-                [type]="hideRepeatedPassword ? 'password' : 'text'" placeholder="Powtórz hasło"
-                [appPasswordCompare]="userModel.password" [appUpdateControl]="passowrd">
-              <mat-icon matSuffix (click)="hideRepeatedPassword = !hideRepeatedPassword">{{hidePassword ?
-                'visibility_off' :
-                'visibility'}}</mat-icon>
-              <mat-error *ngIf="!userModel.repeatedPassword">Pole jest wymagane</mat-error>
-              <mat-error *ngIf="repeatedPassword && repeatedPassword.errors && repeatedPassword.errors.compare">
-                Hasła nie są takie same</mat-error>
-            </mat-form-field>
-          </div>
+                    </div>
+
+
+                    <div class="field" *ngIf="switchBetweenRegistrationLogin">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Powtórz hasło</mat-label>
+                            <input #repeatedPassword="ngModel" matInput [(ngModel)]="userModel.repeatedPassword"
+                                required [type]="hideRepeatedPassword ? 'password' : 'text'" placeholder="Powtórz hasło"
+                                [appPasswordCompare]="userModel.password" [appUpdateControl]="passowrd">
+                            <mat-icon matSuffix (click)="hideRepeatedPassword = !hideRepeatedPassword">{{hidePassword ?
+                                'visibility_off' :
+                                'visibility'}}</mat-icon>
+                            <mat-error *ngIf="!userModel.repeatedPassword">Pole jest wymagane</mat-error>
+                            <mat-error
+                                *ngIf="repeatedPassword && repeatedPassword.errors && repeatedPassword.errors.compare">
+                                Hasła nie są takie same</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="h-spacer"></div>
+                <div class="h-spacer"></div>
+                <button mat-raised-button color="primary"
+                    (click)="onSubmit(!switchBetweenRegistrationLogin)">{{!switchBetweenRegistrationLogin ? 'Zaloguj' :
+                    'Zarejestruj'}}</button>
+                <div class="set-content-horizontally normal-text">
+                    <div id="loginRegistry" class="center-all" (click)="changeDisplayState_changeHandler()">
+                        {{!switchBetweenRegistrationLogin ? 'Rejestracja' : 'Logowanie'}}
+                    </div>
+                    <div id="forgotPassword" class="center-all">{{'Odzyskaj hasło'}}</div>
+                </div>
+
+
+            </div>
+            <div id="bottomSection" class="center-all bordr-radius-bottom"></div>
+
         </div>
-        <div class="h-spacer"></div>
-        <div class="h-spacer"></div>
-        <button mat-raised-button color="primary"
-          (click)="onSubmit(!switchBetweenRegistrationLogin)">{{!switchBetweenRegistrationLogin ? 'Zaloguj' :
-          'Zarejestruj'}}</button>
-        <div class="set-content-horizontally normal-text">
-          <div id="loginRegistry" class="center-all" (click)="changeDisplayState_changeHandler()">
-            {{!switchBetweenRegistrationLogin ? 'Rejestracja' : 'Logowanie'}}
-          </div>
-          <div id="forgotPassword" class="center-all">{{'Odzyskaj hasło'}}</div>
-        </div>
-
-
-      </div>
-      <div id="bottomSection" class="center-all bordr-radius-bottom"></div>
-
     </div>
-  </div>
 </div>
