@@ -9,6 +9,7 @@
       "@services/*": ["app/services/*"],
       "@directives/*": ["app/directives/*"],
       "@styles/*": ["../../css-styles/*"],
+      "@environments/*":["environments/*"],
       "assets": ["assets/svg"]
     },
     "strictPropertyInitialization": false,

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { UserServiceContants } from '@services/httpServiceContants/UserServiceContants';
+import { User } from 'app/model';
 
 @Injectable({
     providedIn: 'root',
@@ -14,7 +15,10 @@ export class UserService {
         const headers = new HttpHeaders({
             Authorization: 'Basic ' + btoa(user + ':' + pass),
         });
-        return this.http.get(url, { headers, responseType: 'text' as 'json' });
+        return this.http.post<User>(url, {
+            headers,
+            responseType: 'text' as 'json',
+        });
     }
 
     public getUser() {
