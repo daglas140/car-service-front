@@ -56,7 +56,6 @@ describe('LoginPageComponent', () => {
             htmlElement = fixture.nativeElement;
             const topSectionInnerText =
                 htmlElement.querySelector('#topSection')?.innerHTML;
-            console.log('text', topSectionInnerText);
             expect(topSectionInnerText).toEqual('LOGOWANIE');
         });
     }));
