@@ -1,0 +1,10 @@
+<div class="nav-bar horizontal">
+    <div class="center-vertically icon-container-size max-height align-right" *ngFor="let icon of icons">
+        <a [routerLink]="icon.path" routerLinkActive="active" #rla="routerLinkActive">
+            <mat-icon [id]="icon.id" [matTooltip]="icon.tooltip!" (click)="icon.action!()"
+                [ngClass]="{'color': rla.isActive ? 'warn' : 'primary'}" class="nav-icon-size nav-bar-icon"
+                *ngIf="icon.visibility">{{icon.name}}</mat-icon>
+        </a>
+    </div>
+
+</div>

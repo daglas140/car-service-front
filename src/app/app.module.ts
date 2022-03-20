@@ -31,6 +31,8 @@ import { PasswordCompareDirective } from '@directives/password-compare-directive
 import { MatIconModule } from '@angular/material/icon';
 import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import { UpdateControlDirective } from './directives/update-value-directive/update-control.directive';
+import { NavbarModule } from './components/atom-components/nav-bar/nav-bar.component.module';
+import { AdditionalNavBarModule } from '@components/atom-components/additional-nav-bar/additional-nav-bar.component.module';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -67,6 +69,9 @@ FullCalendarModule.registerPlugins([
         MatTooltipModule,
         MatIconModule,
         MatPasswordStrengthModule,
+        NavbarModule,
+        AdditionalNavBarModule,
+        AppRoutingModule,
     ],
     exports: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
