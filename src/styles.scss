@@ -61,6 +61,10 @@ body {
     align-items: center;
 }
 
+.center-text {
+    text-align: center;
+}
+
 .center-horizontally {
     display: flex;
     justify-content: center;
@@ -148,4 +152,42 @@ button.mat-raised-button {
 
 .h-spacer {
     min-height: $margin-standard;
+}
+
+.nav-bar {
+    position: fixed;
+    background-color: $color-main;
+    width: $navbar-size;
+    height: 100vh;
+    &.horizontal {
+        width: 100vw;
+        height: $navbar-size / 2;
+    }
+}
+
+mat-icon.nav-bar-icon {
+    transform: scale(2);
+    color: $color-background;
+}
+
+mat-icon.nav-bar-icon:hover {
+    color: $color-black;
+    transition: color 0.5s;
+}
+
+.active.mat-icon.nav-bar-icon {
+    color: $color-black;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.max-height {
+    height: 100%;
+}
+
+.align-right {
+    justify-content: right;
+    margin-right: $margin-standard * 2;
 }
