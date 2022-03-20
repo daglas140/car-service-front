@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'sass:math';
 @import './app/css-styles/global-settings-styles.scss';
+
 * {
     box-sizing: border-box;
 }
@@ -135,7 +137,7 @@ input:-webkit-autofill:focus {
 }
 
 .field {
-    margin: $margin-standard / 2;
+    margin: math.div($margin-standard, 2);
 }
 
 .set-content-horizontally {
@@ -161,10 +163,12 @@ button.mat-raised-button {
     height: 100vh;
     &.horizontal {
         width: 100vw;
-        height: $navbar-size / 2;
+        height: math.div($navbar-size, 2);
     }
 }
-
+.nav-bar-icon {
+    cursor: pointer;
+}
 mat-icon.nav-bar-icon {
     transform: scale(2);
     color: $color-background;

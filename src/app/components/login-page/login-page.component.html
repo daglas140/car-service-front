@@ -69,7 +69,8 @@
                     (click)="onSubmit(!switchBetweenRegistrationLogin)">{{!switchBetweenRegistrationLogin ? 'Zaloguj' :
                     'Zarejestruj'}}</button>
                 <div class="set-content-horizontally normal-text">
-                    <div id="loginRegistry" class="center-all" (click)="changeDisplayState_changeHandler()">
+                    <div id="loginRegistry" class="center-all"
+                        (click)="changeDisplayState_changeHandler(switchBetweenRegistrationLogin)">
                         {{!switchBetweenRegistrationLogin ? 'Rejestracja' : 'Logowanie'}}
                     </div>
                     <div id="forgotPassword" class="center-all">{{'Odzyskaj hasło'}}</div>

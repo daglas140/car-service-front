@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavbarElements } from '@model/';
 @Component({
     selector: 'app-nav-bar',
@@ -8,7 +9,7 @@ import { NavbarElements } from '@model/';
 export class NavBarComponent implements OnInit {
     public icons: NavbarElements[] = [];
     isActive: boolean;
-    constructor() {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {
         const user = localStorage.getItem('user');
@@ -41,5 +42,9 @@ export class NavBarComponent implements OnInit {
             visibility: true,
             tooltip: 'Kalendarz',
         });
+    }
+
+    navigate(path: string): void {
+        this.router.navigate([path]);
     }
 }
