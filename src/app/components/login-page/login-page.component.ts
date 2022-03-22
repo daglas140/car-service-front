@@ -29,9 +29,8 @@ export class LoginPageComponent {
         private authGuardService: AuthGuardService
     ) {}
 
-    changeDisplayState_changeHandler(): void {
-        this.switchBetweenRegistrationLogin =
-            !this.switchBetweenRegistrationLogin;
+    changeDisplayState_changeHandler(switcher: boolean): void {
+        this.switchBetweenRegistrationLogin = !switcher;
     }
 
     onSubmit(login: boolean) {

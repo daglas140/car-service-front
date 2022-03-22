@@ -15,7 +15,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { GarageComponent } from '@components/garage/garage.component';
 import { ClientsComponent } from '@components/clients/clients.component';
 import { CarsComponent } from '@components/cars/cars.component';
@@ -53,7 +53,6 @@ FullCalendarModule.registerPlugins([
         CarsComponent,
         PasswordCompareDirective,
         UpdateControlDirective,
-        JwtInterceptor,
     ],
     imports: [
         BrowserModule,
@@ -74,6 +73,7 @@ FullCalendarModule.registerPlugins([
         NavbarModule,
         AdditionalNavBarModule,
         AppRoutingModule,
+        RouterModule,
     ],
     exports: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
